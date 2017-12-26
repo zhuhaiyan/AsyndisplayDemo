@@ -1,0 +1,15 @@
+platform :ios, '8.0'
+use_frameworks!
+target '适配iphonex' do
+pod 'AsyncDisplayKit'
+pod 'JKit-Swift'
+pod 'SDWebImage'
+pod 'MJRefresh'
+pod 'Alamofire'
+pod 'HandyJSON', '~> 4.0.0-beta.1'
+pod 'YYKit'
+pod 'Masonry'
+pod 'JKit'
+pod 'JCustomView'
+
+end 

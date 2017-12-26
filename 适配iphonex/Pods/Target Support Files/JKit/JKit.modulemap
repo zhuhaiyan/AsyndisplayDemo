@@ -1,0 +1,6 @@
+framework module JKit {
+  umbrella header "JKit-umbrella.h"
+
+  export *
+  module * { export * }
+}

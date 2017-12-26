@@ -1,0 +1,6 @@
+framework module JCustomView {
+  umbrella header "JCustomView-umbrella.h"
+
+  export *
+  module * { export * }
+}

@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="iN0-l3-epB" customClass="HomeDetailView" customModule="适配iphonex" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="437" height="228"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="luisX.png" translatesAutoresizingMaskIntoConstraints="NO" id="BiQ-N6-5Dm">
+                    <rect key="frame" x="0.0" y="0.0" width="437" height="228"/>
+                </imageView>
+            </subviews>
+            <constraints>
+                <constraint firstAttribute="trailing" secondItem="BiQ-N6-5Dm" secondAttribute="trailing" id="1gt-uM-gca"/>
+                <constraint firstItem="BiQ-N6-5Dm" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="H0N-P7-Ulg"/>
+                <constraint firstItem="BiQ-N6-5Dm" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="fnV-GQ-5Gf"/>
+                <constraint firstAttribute="bottom" secondItem="BiQ-N6-5Dm" secondAttribute="bottom" id="zea-3d-XhC"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <connections>
+                <outlet property="bgImage" destination="BiQ-N6-5Dm" id="oj4-9u-AXY"/>
+            </connections>
+            <point key="canvasLocation" x="121.5" y="-200.5"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="luisX.png" width="1000" height="1000"/>
+    </resources>
+</document>

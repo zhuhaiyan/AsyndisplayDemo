@@ -1,0 +1,6 @@
+framework module Pods___iphonex {
+  umbrella header "Pods-适配iphonex-umbrella.h"
+
+  export *
+  module * { export * }
+}

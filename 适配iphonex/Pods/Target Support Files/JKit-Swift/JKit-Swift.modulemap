@@ -1,0 +1,6 @@
+framework module JKit_Swift {
+  umbrella header "JKit-Swift-umbrella.h"
+
+  export *
+  module * { export * }
+}
