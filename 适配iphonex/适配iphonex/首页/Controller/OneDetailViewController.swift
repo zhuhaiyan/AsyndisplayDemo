@@ -81,11 +81,11 @@ extension OneDetailViewController: ASTableDelegate, ASTableDataSource,UIScrollVi
     }
     
     func numberOfSections(in tableNode: ASTableNode) -> Int {
-        return 1
+        return 3
     }
     
     func tableNode(_ tableNode: ASTableNode, numberOfRowsInSection section: Int) -> Int {
-        return 20
+        return 5
     }
     
     func tableNode(_ tableNode: ASTableNode, nodeBlockForRowAt indexPath: IndexPath) -> ASCellNodeBlock {
@@ -103,6 +103,18 @@ extension OneDetailViewController: ASTableDelegate, ASTableDataSource,UIScrollVi
         
         return ASSizeRange.init(min: CGSize.init(width: KWidth, height: 100), max: CGSize.init(width: KWidth, height: 100))
     }
+    
+    func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+        return 30
+    }
+    
+    func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+        
+        let view: HomeDetailSectionView = HomeDetailSectionView.initView()
+        view.titleLab.text = "标题"
+        return view
+    }
+    
     
     
 }

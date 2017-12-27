@@ -71,7 +71,7 @@ class OneViewController: BaseViewController {
             if version >= 11{
                 
                 let bgView: UIView = UIView.init(frame: CGRect.init(x: 0, y: 0, width: 40, height: 40))
-                let button: UIButton = UIButton.init(frame: CGRect.init(x: 10, y: 0, width: 40, height: 40))
+                let button: UIButton = UIButton.init(frame: CGRect.init(x: 15, y: 0, width: 40, height: 40))
                 button.setTitle("测试", for: .normal)
                 button.titleLabel?.font = UIFont.systemFont(ofSize: 14)
                 bgView.addSubview(button)
