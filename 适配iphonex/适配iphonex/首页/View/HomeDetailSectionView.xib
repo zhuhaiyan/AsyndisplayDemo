@@ -16,7 +16,7 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KTO-rT-Sok">
-                    <rect key="frame" x="20" y="0.0" width="39.5" height="43"/>
+                    <rect key="frame" x="10" y="0.0" width="39.5" height="43"/>
                     <fontDescription key="fontDescription" type="system" pointSize="16"/>
                     <color key="textColor" red="0.59999999999999998" green="0.59999999999999998" blue="0.59999999999999998" alpha="1" colorSpace="calibratedRGB"/>
                     <nil key="highlightedColor"/>
@@ -26,7 +26,7 @@
             <constraints>
                 <constraint firstAttribute="bottom" secondItem="KTO-rT-Sok" secondAttribute="bottom" id="898-np-UIc"/>
                 <constraint firstItem="KTO-rT-Sok" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="gxa-gT-TB6"/>
-                <constraint firstItem="KTO-rT-Sok" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="20" id="pVz-tX-Wxg"/>
+                <constraint firstItem="KTO-rT-Sok" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="10" id="pVz-tX-Wxg"/>
             </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <connections>

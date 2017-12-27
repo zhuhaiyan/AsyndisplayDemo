@@ -16,6 +16,7 @@ class OneDetailViewController: BaseViewController {
         let table: ASTableNode = ASTableNode.init()
         table.delegate = self
         table.dataSource = self
+//        table.view.separatorStyle = UITableViewCellSeparatorStyle.none
         table.frame = CGRect.init(x: 0, y: -kNavBarHeight, width: KWidth, height: KHight + kNavBarHeight )
         table.view.tableHeaderView = tableHeadView
         return table
