@@ -135,6 +135,22 @@ class TwoTableCellNode: ASCellNode {
         
         super.didLoad()
     }
+    
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        print("点击了tableviewcell")
+    }
+    
+    override func hitTest(_ point: CGPoint, with event: UIEvent?) -> UIView? {
+        let view = super.hitTest(point, with: event)
+        
+        if view != nil {
+            if (view?.isKind(of: UICollectionView.classForCoder()))! {
+                
+                return self.view
+            }
+        }
+        return super.hitTest(point, with: event)
+    }
 }
 extension TwoTableCellNode: ASCollectionDelegate,ASCollectionDataSource {
     
@@ -161,6 +177,10 @@ extension TwoTableCellNode: ASCollectionDelegate,ASCollectionDataSource {
     func collectionNode(_ collectionNode: ASCollectionNode, constrainedSizeForItemAt indexPath: IndexPath) -> ASSizeRange {
         
         return ASSizeRangeMake(CGSize.init(width: (KWidth - 20)/3, height: 100), CGSize.init(width: (KWidth - 20)/3, height: 100))
+    }
+    
+    func collectionNode(_ collectionNode: ASCollectionNode, didSelectItemAt indexPath: IndexPath) {
+        print("点击了collectionview的cell")
     }
 }
 
