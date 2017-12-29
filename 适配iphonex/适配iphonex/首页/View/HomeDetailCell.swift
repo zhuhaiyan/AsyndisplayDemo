@@ -16,6 +16,7 @@ class HomeDetailCell: ASCellNode {
     var userLoction: ASTextNode! // 用户位置
     var floorNum: ASTextNode! // 楼层号
     var content: ASTextNode! // 内容
+    var reply: HomeDetailReplyNode! // 子回复
     
     override init() {
         super.init()
@@ -52,6 +53,13 @@ class HomeDetailCell: ASCellNode {
         let contentNode: ASTextNode = AsynComment.nodeTextNodeAddNode(node: self)
         contentNode.attributedText = NSAttributedString.init(string: model.content, attributes: [NSAttributedStringKey.foregroundColor : kColor_666666, NSAttributedStringKey.font: kFont_14])
         content = contentNode
+        
+        let arr = [model]
+        let replyNode: HomeDetailReplyNode = HomeDetailReplyNode.init()
+        replyNode.addReplayNode(items: arr)
+        self.addSubnode(replyNode)
+        reply = replyNode
+        
     }
     
     override func layoutSpecThatFits(_ constrainedSize: ASSizeRange) -> ASLayoutSpec {
@@ -60,15 +68,26 @@ class HomeDetailCell: ASCellNode {
         
         let locationVer = ASStackLayoutSpec.init(direction: ASStackLayoutDirection.vertical, spacing: 10, justifyContent: ASStackLayoutJustifyContent.start, alignItems: ASStackLayoutAlignItems.start, children: [userName,userLoction])
 
+//        let floorHor = ASStackLayoutSpec.init(direction: ASStackLayoutDirection.horizontal, spacing: 0, justifyContent: .spaceBetween, alignItems: ASStackLayoutAlignItems.start, children: [locationVer, floorNum])
+//
+//        let replyVer = ASStackLayoutSpec.init(direction: .vertical, spacing: 10, justifyContent: ASStackLayoutJustifyContent.start, alignItems: ASStackLayoutAlignItems.stretch, children: [floorHor,reply,content])
+//
+//
+//        let imageHor = ASStackLayoutSpec.init(direction: ASStackLayoutDirection.horizontal, spacing: 10, justifyContent: ASStackLayoutJustifyContent.start, alignItems: ASStackLayoutAlignItems.stretch, children: [userImage, replyVer])
 
-         let imageHor = ASStackLayoutSpec.init(direction: ASStackLayoutDirection.horizontal, spacing: 10, justifyContent: ASStackLayoutJustifyContent.start, alignItems: ASStackLayoutAlignItems.start, children: [userImage, locationVer])
+     
+//        let contentVer = ASStackLayoutSpec.init(direction: .vertical, spacing: 10, justifyContent: ASStackLayoutJustifyContent.start, alignItems: ASStackLayoutAlignItems.stretch, children: [imageHor,content])
+
+      
+         let imageHor = ASStackLayoutSpec.init(direction: ASStackLayoutDirection.horizontal, spacing: 10, justifyContent: ASStackLayoutJustifyContent.start, alignItems: ASStackLayoutAlignItems.stretch, children: [userImage, locationVer])
         
         let nameHor = ASStackLayoutSpec.init(direction: ASStackLayoutDirection.horizontal, spacing: 10, justifyContent: .spaceBetween, alignItems: ASStackLayoutAlignItems.start, children: [imageHor, floorNum])
+        
+        let replyVer = ASStackLayoutSpec.init(direction: .vertical, spacing: 10, justifyContent: ASStackLayoutJustifyContent.start, alignItems: ASStackLayoutAlignItems.stretch, children: [nameHor,reply])
+        
+        let contentVer = ASStackLayoutSpec.init(direction: .vertical, spacing: 10, justifyContent: ASStackLayoutJustifyContent.start, alignItems: ASStackLayoutAlignItems.stretch, children: [replyVer,content])
 
-        
-        let contentVer = ASStackLayoutSpec.init(direction: .vertical, spacing: 10, justifyContent: ASStackLayoutJustifyContent.start, alignItems: ASStackLayoutAlignItems.stretch, children: [nameHor,content])
-        
-        
+     
         let inset = ASInsetLayoutSpec.init(insets: UIEdgeInsets.init(top: 10, left: 10, bottom: 10, right: 10), child: contentVer)
         
         return inset

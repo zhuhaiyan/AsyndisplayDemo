@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		312F960B1FF33F5600D6AA90 /* CommentModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 312F960A1FF33F5600D6AA90 /* CommentModel.swift */; };
+		3133CBAF1FF60A9300D6BCD2 /* HomeDetailReplyItemNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3133CBAE1FF60A9300D6BCD2 /* HomeDetailReplyItemNode.swift */; };
+		3133CBB11FF61EF800D6BCD2 /* HomeDetailReplyNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3133CBB01FF61EF800D6BCD2 /* HomeDetailReplyNode.swift */; };
 		313DF5561FF49E39003E5E29 /* UIButton+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 313DF5551FF49E39003E5E29 /* UIButton+Ext.swift */; };
 		31421DEF1FF2363000444704 /* HomeDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31421DEE1FF2363000444704 /* HomeDetailView.swift */; };
 		31421DF11FF2363F00444704 /* HomeDetailView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 31421DF01FF2363F00444704 /* HomeDetailView.xib */; };
@@ -44,6 +46,8 @@
 /* Begin PBXFileReference section */
 		1DA87B4E833C2EF8785D9FB2 /* Pods-适配iphonex.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-适配iphonex.debug.xcconfig"; path = "Pods/Target Support Files/Pods-适配iphonex/Pods-适配iphonex.debug.xcconfig"; sourceTree = "<group>"; };
 		312F960A1FF33F5600D6AA90 /* CommentModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentModel.swift; sourceTree = "<group>"; };
+		3133CBAE1FF60A9300D6BCD2 /* HomeDetailReplyItemNode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeDetailReplyItemNode.swift; sourceTree = "<group>"; };
+		3133CBB01FF61EF800D6BCD2 /* HomeDetailReplyNode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeDetailReplyNode.swift; sourceTree = "<group>"; };
 		313DF5551FF49E39003E5E29 /* UIButton+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIButton+Ext.swift"; sourceTree = "<group>"; };
 		31421DEE1FF2363000444704 /* HomeDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeDetailView.swift; sourceTree = "<group>"; };
 		31421DF01FF2363F00444704 /* HomeDetailView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HomeDetailView.xib; sourceTree = "<group>"; };
@@ -261,6 +265,8 @@
 				31B114A41FF0C9EC005832CE /* HomeOneCell.swift */,
 				31B114A61FF0CA00005832CE /* HomeBigImageCell.swift */,
 				315CCA801FF22D7A0043EDB5 /* HomeDetailCell.swift */,
+				3133CBAE1FF60A9300D6BCD2 /* HomeDetailReplyItemNode.swift */,
+				3133CBB01FF61EF800D6BCD2 /* HomeDetailReplyNode.swift */,
 				31421DEE1FF2363000444704 /* HomeDetailView.swift */,
 				31421DF01FF2363F00444704 /* HomeDetailView.xib */,
 				31421DF21FF24D5A00444704 /* HomeDetailSectionView.swift */,
@@ -448,9 +454,11 @@
 				316398031FEC956900CABDB3 /* BaseViewController.swift in Sources */,
 				315CCA7D1FF227980043EDB5 /* UINavigationBar+Ext.swift in Sources */,
 				31B1149E1FF0C59E005832CE /* ThreeViewController.swift in Sources */,
+				3133CBB11FF61EF800D6BCD2 /* HomeDetailReplyNode.swift in Sources */,
 				31B114A91FF0CBD3005832CE /* HomeModel.swift in Sources */,
 				315CCA761FF1E2A90043EDB5 /* Comment.swift in Sources */,
 				31B114991FF0C591005832CE /* TwoViewController.swift in Sources */,
+				3133CBAF1FF60A9300D6BCD2 /* HomeDetailReplyItemNode.swift in Sources */,
 				3163980D1FEC95D800CABDB3 /* BaseTabBarViewController.swift in Sources */,
 				315CCA711FF1DF610043EDB5 /* EventsCollectionCell.swift in Sources */,
 				31421DEF1FF2363000444704 /* HomeDetailView.swift in Sources */,
