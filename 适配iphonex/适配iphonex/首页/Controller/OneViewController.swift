@@ -32,6 +32,8 @@ class OneViewController: BaseViewController {
         self.view.addSubnode(table)
         self.getData()
         
+
+        
     }
     
     func getData() -> Void {

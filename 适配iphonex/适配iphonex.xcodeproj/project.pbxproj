@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		312F960B1FF33F5600D6AA90 /* CommentModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 312F960A1FF33F5600D6AA90 /* CommentModel.swift */; };
+		313DF5561FF49E39003E5E29 /* UIButton+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 313DF5551FF49E39003E5E29 /* UIButton+Ext.swift */; };
 		31421DEF1FF2363000444704 /* HomeDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31421DEE1FF2363000444704 /* HomeDetailView.swift */; };
 		31421DF11FF2363F00444704 /* HomeDetailView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 31421DF01FF2363F00444704 /* HomeDetailView.xib */; };
 		31421DF31FF24D5A00444704 /* HomeDetailSectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31421DF21FF24D5A00444704 /* HomeDetailSectionView.swift */; };
@@ -43,6 +44,7 @@
 /* Begin PBXFileReference section */
 		1DA87B4E833C2EF8785D9FB2 /* Pods-适配iphonex.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-适配iphonex.debug.xcconfig"; path = "Pods/Target Support Files/Pods-适配iphonex/Pods-适配iphonex.debug.xcconfig"; sourceTree = "<group>"; };
 		312F960A1FF33F5600D6AA90 /* CommentModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentModel.swift; sourceTree = "<group>"; };
+		313DF5551FF49E39003E5E29 /* UIButton+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIButton+Ext.swift"; sourceTree = "<group>"; };
 		31421DEE1FF2363000444704 /* HomeDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeDetailView.swift; sourceTree = "<group>"; };
 		31421DF01FF2363F00444704 /* HomeDetailView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HomeDetailView.xib; sourceTree = "<group>"; };
 		31421DF21FF24D5A00444704 /* HomeDetailSectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeDetailSectionView.swift; sourceTree = "<group>"; };
@@ -95,6 +97,7 @@
 			isa = PBXGroup;
 			children = (
 				315CCA7C1FF227980043EDB5 /* UINavigationBar+Ext.swift */,
+				313DF5551FF49E39003E5E29 /* UIButton+Ext.swift */,
 			);
 			path = Categary;
 			sourceTree = "<group>";
@@ -432,6 +435,7 @@
 				31B114901FF0C57C005832CE /* FourViewController.swift in Sources */,
 				315CCA7A1FF1F1E10043EDB5 /* AsynComment.swift in Sources */,
 				31B114A71FF0CA00005832CE /* HomeBigImageCell.swift in Sources */,
+				313DF5561FF49E39003E5E29 /* UIButton+Ext.swift in Sources */,
 				315CCA7F1FF22A510043EDB5 /* OneDetailViewController.swift in Sources */,
 				316397F31FEC954600CABDB3 /* ViewController.swift in Sources */,
 				31421DF31FF24D5A00444704 /* HomeDetailSectionView.swift in Sources */,

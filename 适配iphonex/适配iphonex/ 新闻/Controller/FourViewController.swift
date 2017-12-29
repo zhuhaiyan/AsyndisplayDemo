@@ -14,7 +14,13 @@ class FourViewController: BaseViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        
+        let buton: UIButton = UIButton.init(type: .custom)
+        buton.frame = CGRect.init(x: 50, y: 50, width: 50, height: 50)
+        buton.backgroundColor = UIColor.red
+        buton.click = {
+           print("点击了button")
+        }
+        self.view.addSubview(buton)
     }
 
     override func didReceiveMemoryWarning() {
