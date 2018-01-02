@@ -8,11 +8,14 @@ PODS:
     - PINRemoteImage/iOS (= 3.0.0-beta.8)
     - PINRemoteImage/PINCache
   - HandyJSON (4.0.0-beta.1)
+  - JCore (1.1.6)
   - JCustomView (1.1.7):
     - JKit
     - SDWebImage
   - JKit (2.2.3)
   - JKit-Swift (1.1.5)
+  - JPush (3.0.7):
+    - JCore (~> 1.1.6)
   - Masonry (1.1.0)
   - MJRefresh (3.1.15)
   - PINCache (3.0.1-beta.4):
@@ -43,6 +46,7 @@ DEPENDENCIES:
   - JCustomView
   - JKit
   - JKit-Swift
+  - JPush
   - Masonry
   - MJRefresh
   - SDWebImage
@@ -52,9 +56,11 @@ SPEC CHECKSUMS:
   Alamofire: 2d95912bf4c34f164fdfc335872e8c312acaea4a
   AsyncDisplayKit: 2234dd8d8770a5ed72936b3f8394bd5a807765f6
   HandyJSON: 428bb18e2c34c2a77361accebf90cf64e4f74118
+  JCore: 18fc8725124f26e55625eaf224659b3a999dcf63
   JCustomView: 5d1b341e45df601f2e4677b6b2c83d27750d4d51
   JKit: 849e961852eb85039c40d4ecc8b7a6f69410f367
   JKit-Swift: 497955b93aa65e3367bea6088b338508c98ec1b9
+  JPush: 111b79b8a0169ab8fd4c486dac3ed166ed69293e
   Masonry: 678fab65091a9290e40e2832a55e7ab731aad201
   MJRefresh: 9af70f5f9327a2cf87f0fb5929f35fcc2fa638ea
   PINCache: a89c8f609232afac77128557bd12c861844423d7
@@ -63,6 +69,6 @@ SPEC CHECKSUMS:
   SDWebImage: 89a9d32cd520bbb46eb14e541d5109b3564af198
   YYKit: 7cda43304a8dc3696c449041e2cb3107b4e236e7
 
-PODFILE CHECKSUM: 63a67fe8beb5c574351b38726b1109c95f70d6f1
+PODFILE CHECKSUM: af68ca9ab185ce61ae6d96eba2b8848acc474c5c
 
 COCOAPODS: 1.2.0

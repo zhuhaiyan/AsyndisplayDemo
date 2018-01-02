@@ -72,6 +72,7 @@
 		3163980C1FEC95D800CABDB3 /* BaseTabBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseTabBarViewController.swift; sourceTree = "<group>"; };
 		3163980E1FEC95F000CABDB3 /* BaseNavViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseNavViewController.swift; sourceTree = "<group>"; };
 		316398181FECDFCE00CABDB3 /* Asyn-Brigding-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Asyn-Brigding-Header.h"; sourceTree = "<group>"; };
+		319BDAE11FFB203B00FC8142 /* 适配iphonex.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "适配iphonex.entitlements"; sourceTree = "<group>"; };
 		31B1148E1FF0C57C005832CE /* FourViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FourViewController.swift; sourceTree = "<group>"; };
 		31B114921FF0C591005832CE /* TwoTableCellNode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TwoTableCellNode.swift; sourceTree = "<group>"; };
 		31B114931FF0C591005832CE /* TwoCollectionCellNode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TwoCollectionCellNode.swift; sourceTree = "<group>"; };
@@ -127,6 +128,7 @@
 		316397EF1FEC954600CABDB3 /* 适配iphonex */ = {
 			isa = PBXGroup;
 			children = (
+				319BDAE11FFB203B00FC8142 /* 适配iphonex.entitlements */,
 				315CCA7B1FF2276C0043EDB5 /* Categary */,
 				31B114891FF0C4D4005832CE /* 首页 */,
 				31B114861FF0C4D1005832CE /* 赛事 */,
@@ -345,7 +347,15 @@
 				TargetAttributes = {
 					316397EC1FEC954600CABDB3 = {
 						CreatedOnToolsVersion = 9.2;
-						ProvisioningStyle = Automatic;
+						ProvisioningStyle = Manual;
+						SystemCapabilities = {
+							com.apple.BackgroundModes = {
+								enabled = 1;
+							};
+							com.apple.Push = {
+								enabled = 1;
+							};
+						};
 					};
 				};
 			};
@@ -536,7 +546,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.1;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -587,7 +597,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.1;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
@@ -600,14 +610,18 @@
 			baseConfigurationReference = 1DA87B4E833C2EF8785D9FB2 /* Pods-适配iphonex.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_STYLE = Automatic;
+				CODE_SIGN_ENTITLEMENTS = "适配iphonex/适配iphonex.entitlements";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_STYLE = Manual;
 				DEVELOPMENT_TEAM = 8W5UTYMJE7;
 				GCC_PREFIX_HEADER = "/Users/zhuhaiyan/Desktop/适配iphonex 2/适配iphonex/PrefixHeader.pch";
 				INFOPLIST_FILE = "适配iphonex/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 11.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "com.huayu.--iphonex";
+				PRODUCT_BUNDLE_IDENTIFIER = com.huayu.zhuhaiyan;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "be5d3b73-0796-4747-8e1a-36df94ab402d";
+				PROVISIONING_PROFILE_SPECIFIER = zhuxiaobaidevelope;
 				SWIFT_OBJC_BRIDGING_HEADER = "适配iphonex/Asyn-Brigding-Header.h";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -619,14 +633,18 @@
 			baseConfigurationReference = 988A44D6E714EBA1DAFE0BFF /* Pods-适配iphonex.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_STYLE = Automatic;
+				CODE_SIGN_ENTITLEMENTS = "适配iphonex/适配iphonex.entitlements";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
+				CODE_SIGN_STYLE = Manual;
 				DEVELOPMENT_TEAM = 8W5UTYMJE7;
 				GCC_PREFIX_HEADER = "/Users/zhuhaiyan/Desktop/适配iphonex 2/适配iphonex/PrefixHeader.pch";
 				INFOPLIST_FILE = "适配iphonex/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 11.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "com.huayu.--iphonex";
+				PRODUCT_BUNDLE_IDENTIFIER = com.huayu.zhuhaiyan;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "fb912895-9f59-4e3b-aebc-628aa620b7fb";
+				PROVISIONING_PROFILE_SPECIFIER = zhuxiaobaiDistribution;
 				SWIFT_OBJC_BRIDGING_HEADER = "适配iphonex/Asyn-Brigding-Header.h";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";

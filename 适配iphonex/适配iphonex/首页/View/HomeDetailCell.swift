@@ -54,7 +54,7 @@ class HomeDetailCell: ASCellNode {
         contentNode.attributedText = NSAttributedString.init(string: model.content, attributes: [NSAttributedStringKey.foregroundColor : kColor_666666, NSAttributedStringKey.font: kFont_14])
         content = contentNode
         
-        let arr = [model]
+        let arr = [model,model,model]
         let replyNode: HomeDetailReplyNode = HomeDetailReplyNode.init()
         replyNode.addReplayNode(items: arr)
         self.addSubnode(replyNode)

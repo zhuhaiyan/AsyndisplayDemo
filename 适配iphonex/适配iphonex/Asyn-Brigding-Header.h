@@ -10,5 +10,6 @@
 #define Asyn_Brigding_Header_h
 
 #import <AsyncDisplayKit/AsyncDisplayKit.h>
-
+#import "JPUSHService.h"
+#import <UserNotifications/UserNotifications.h>
 #endif /* Asyn_Brigding_Header_h */

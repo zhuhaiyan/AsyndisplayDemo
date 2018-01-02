@@ -11,5 +11,5 @@ pod 'YYKit'
 pod 'Masonry'
 pod 'JKit'
 pod 'JCustomView'
-
+pod 'JPush'
 end 

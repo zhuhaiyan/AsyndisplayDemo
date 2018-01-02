@@ -7,7 +7,6 @@
 //
 
 import UIKit
-
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
@@ -17,32 +16,109 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         
         self.window?.rootViewController = BaseTabBarViewController()
+        self.AddPush(launch: launchOptions)
         
         return true
     }
 
+    /// 添加推送
+    func AddPush(launch: [UIApplicationLaunchOptionsKey : Any]?) -> Void {
+        
+        if let version = Double.init(UIDevice.current.systemVersion) {
+          
+            if version >= 10.0{
+                
+                let push: JPUSHRegisterEntity = JPUSHRegisterEntity.init()
+                push.types = Int(UInt8(UNAuthorizationOptions.alert.rawValue) | UInt8(UNAuthorizationOptions.badge.rawValue) | UInt8(UNAuthorizationOptions.sound.rawValue))
+                
+                JPUSHService.register(forRemoteNotificationConfig: push, delegate: self)
+            }else{
+                
+                JPUSHService.register(forRemoteNotificationTypes: UInt(UInt8(UNAuthorizationOptions.alert.rawValue) | UInt8(UNAuthorizationOptions.badge.rawValue) | UInt8(UNAuthorizationOptions.sound.rawValue)), categories: nil)
+            }
+        }
+        
+        let push: JPUSHRegisterEntity = JPUSHRegisterEntity.init()
+        push.types = Int(UInt8(UNAuthorizationOptions.alert.rawValue) | UInt8(UNAuthorizationOptions.badge.rawValue) | UInt8(UNAuthorizationOptions.sound.rawValue))
+        
+        JPUSHService.register(forRemoteNotificationConfig: push, delegate: self)
+        
+        /// 注册极光推送
+        JPUSHService.setup(withOption: launch, appKey: "1452c81e164ec1c132ff7aeb", channel: "", apsForProduction: true, advertisingIdentifier: nil)
+        
+        /// 添加自定义消息推送
+        
+//        NotificationCenter.default.addObserver(self, selector: #selector(networkDidReceiveMessage), name: Notification.init(name: kJPFNetworkDidReceiveMessageNotification), object: nil)
+    
+    }
+    
+    @objc func networkDidReceiveMessage(noti: Notification) -> Void {
+        
+        let userInfo = noti.userInfo
+        
+        print(userInfo as Any)
+    }
+    
     func applicationWillResignActive(_ application: UIApplication) {
-        // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.
-        // Use this method to pause ongoing tasks, disable timers, and invalidate graphics rendering callbacks. Games should use this method to pause the game.
+
     }
 
     func applicationDidEnterBackground(_ application: UIApplication) {
-        // Use this method to release shared resources, save user data, invalidate timers, and store enough application state information to restore your application to its current state in case it is terminated later.
-        // If your application supports background execution, this method is called instead of applicationWillTerminate: when the user quits.
+       
     }
 
     func applicationWillEnterForeground(_ application: UIApplication) {
-        // Called as part of the transition from the background to the active state; here you can undo many of the changes made on entering the background.
+       
     }
 
     func applicationDidBecomeActive(_ application: UIApplication) {
-        // Restart any tasks that were paused (or not yet started) while the application was inactive. If the application was previously in the background, optionally refresh the user interface.
+      
     }
 
     func applicationWillTerminate(_ application: UIApplication) {
-        // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
+      
     }
 
-
 }
-
+extension AppDelegate : JPUSHRegisterDelegate {
+   
+    /// 注册APNs成功并上报DeviceToken
+    func application(_ application: UIApplication, didRegisterForRemoteNotificationsWithDeviceToken deviceToken: Data) {
+        
+        JPUSHService.registerDeviceToken(deviceToken)
+    }
+    
+    func application(_ application: UIApplication, didFailToRegisterForRemoteNotificationsWithError error: Error) {
+        print(error)
+    }
+    
+    /// iOS 10 需要
+    func jpushNotificationCenter(_ center: UNUserNotificationCenter!, willPresent notification: UNNotification!, withCompletionHandler completionHandler: ((Int) -> Void)!) {
+       
+        let userInfo: [AnyHashable: Any] = notification.request.content.userInfo
+        
+        if (notification.request.trigger?.isKind(of: UNPushNotificationTrigger.classForCoder()))!{
+            JPUSHService.handleRemoteNotification(userInfo)
+        }
+        // 需要执行这个方法，选择是否提醒用户，有Badge、Sound、Alert三种类型可以选择设置
+        completionHandler(Int(UNAuthorizationOptions.alert.rawValue))
+        
+    }
+    
+    func jpushNotificationCenter(_ center: UNUserNotificationCenter!, didReceive response: UNNotificationResponse!, withCompletionHandler completionHandler: (() -> Void)!) {
+        
+        let userInfo: [AnyHashable: Any] = response.notification.request.content.userInfo
+        if (response.notification.request.trigger?.isKind(of: UNPushNotificationTrigger.classForCoder()))!{
+            JPUSHService.handleRemoteNotification(userInfo)
+        }
+        // 系统要求执行这个方法
+        completionHandler()
+    }
+    
+    func application(_ application: UIApplication, didReceiveRemoteNotification userInfo: [AnyHashable : Any], fetchCompletionHandler completionHandler: @escaping (UIBackgroundFetchResult) -> Void) {
+        
+        JPUSHService.handleRemoteNotification(userInfo)
+        completionHandler(UIBackgroundFetchResult.newData)
+    }
+    
+}
